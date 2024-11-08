@@ -72,14 +72,13 @@ export const loginUser = asyncHandler(async (req, res) => {
     const {email, password } = req.body;
 
     //validation
-    if (!email || password) {
+    if (!email || !password) {
         //400 bad request
         return res.status(400).json({ message: "All fields are required" }); 
     }
 
     //check if user exists
     const userExists = await User.findOne({ email});
-
     if (!userExists) {
         return res.status(404).jason({ message: "User not found, sign up!"});
     }
@@ -105,7 +104,7 @@ export const loginUser = asyncHandler(async (req, res) => {
             secure: true,
         });
         //send back the user and token in the response to the client
-        resizeTo.status(200).json({
+        res.status(200).json({
             _id, 
             name,
             email,
@@ -118,4 +117,11 @@ export const loginUser = asyncHandler(async (req, res) => {
     } else {
         res.status(400).json({ message: "Invalid email or password" });
     }
+});
+
+//logout user
+export const logoutUser = asyncHandler(async (req, res) => {
+    res.clearCookie("token");
+
+    res.status(200).json({ message: "User logged out"})
 });
