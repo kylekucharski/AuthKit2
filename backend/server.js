@@ -27,12 +27,13 @@ const routeFiles = fs.readdirSync("./src/routes");
 
 routeFiles.forEach((file) => {
     // use dynamic import
-    import(`./src/routes/${file}`).then((route) => {
+    import(`./src/routes/${file}`)
+      .then((route) => {
         app.use("/api/v1", route.default);
-    })
-    .catch((err) => {
+      })
+      .catch((err) => {
         console.log("Failed to load route file", err);
-    });
+      });
 });
 
 const server = async () => {
