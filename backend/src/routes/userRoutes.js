@@ -9,11 +9,13 @@ import {
 
 import {
     protect,
-    adminMiddleware
+    adminMiddleware,
+    creatorMiddleware
 } from "../middleware/authMiddleware.js";
 
 import {
-    deleteUser
+    deleteUser,
+    getAllUsers,
 } from "../controllers/auth/adminController.js";
 
 
@@ -23,8 +25,11 @@ router.post("/register", registerUser);
 router.post("/login", loginUser);
 router.get("/logout", logoutUser);
 router.get("/user", protect, getUser);
-router.patch("/user", protect, updateUser);
+router.patch("/admin/user", protect, updateUser);
 
 // admin routes
 router.delete("/admin/users/:id", protect, adminMiddleware, deleteUser);
+
+// get all users
+router.get("/admin/users", protect, creatorMiddleware, getAllUsers);
 export default router;
