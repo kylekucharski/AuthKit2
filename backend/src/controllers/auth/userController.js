@@ -125,3 +125,8 @@ export const logoutUser = asyncHandler(async (req, res) => {
 
     res.status(200).json({ message: "User logged out"})
 });
+
+//get user
+export const getUser = asyncHandler(async (req, res) => {
+    //get user details from the token --> exclude password
+});
