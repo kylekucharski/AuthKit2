@@ -9,7 +9,8 @@ import {
     verifyEmail,
     verifyUser,
     forgotPassword,
-    resetPassword
+    resetPassword,
+    changePassword
 } from '../controllers/auth/userController.js';
 
 import {
@@ -52,5 +53,8 @@ router.post("/forgot-password", forgotPassword);
 
 //reset password
 router.post("/reset-password/:resetPasswordToken", resetPassword);
+
+//change password
+router.patch("/change-password", protect, changePassword);
 
 export default router;
