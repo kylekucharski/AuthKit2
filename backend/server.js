@@ -23,6 +23,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
+//error handler middleware
+app.use(errorHandler);
+
 
 //routes
 const routeFiles = fs.readdirSync("./src/routes");
