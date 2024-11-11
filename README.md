@@ -77,6 +77,7 @@ AuthKit2
     │   ├── pages          # Next.js pages for routing
     │   └── styles         # CSS files
     └── App.js             # Main App entry
+```
 
 
 ## Key Functionalities
