@@ -77,3 +77,23 @@ AuthKit2
     │   ├── pages          # Next.js pages for routing
     │   └── styles         # CSS files
     └── App.js             # Main App entry
+
+
+## Key Functionalities
+
+- JWT and bcrypt Authentication: Secure user sessions and password hashing.
+- SendGrid Email Integration: Sends verification and reset password emails with customizable Handlebars templates.
+- Context API & TypeScript: Efficient state management with strict type checking for a reliable codebase.
+
+
+## API Endpoints
+
+- POST /api/v1/register - Register a new user
+- POST /api/v1/login - Log in a user
+- POST /api/v1/reset-password - Password reset initiation
+- POST /api/v1/verify-account - Verify user account
+
+
+## Testing
+
+API endpoints can be tested using Postman. To test locally, start the server and make requests to http://localhost:3000/api/v1.
