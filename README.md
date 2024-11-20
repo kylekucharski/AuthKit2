@@ -32,7 +32,7 @@ AuthKit2 is a full-stack authentication system built to provide secure and effic
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/yourusername/AuthKit2.git
+    git clone https://github.com/kylekucharski/AuthKit2.git
     cd AuthKit2
     ```
 
